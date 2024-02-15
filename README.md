@@ -2,8 +2,8 @@
 Repositório para as atividades do modulo 9 do Inteli.
 
 ## Atividades
-As atividades ponderadas podem ser encontrada
-s a seguir.
-### [POND1: Mapeando e navegando com Tartabot!](https://github.com/IgorSFG/Modulo9/tree/main/src/pond1)
+As atividades ponderadas podem ser encontradas a seguir.
 
-### [POND2: Mapeando e navegando com Tartabot!](https://github.com/IgorSFG/Modulo9/tree/main/src/pond2)
+### [POND1: Simulando com Iotsim!](https://github.com/IgorSFG/Modulo9/tree/main/src/pond1)
+
+### [POND2: Testando com Iotsim!](https://github.com/IgorSFG/Modulo9/tree/main/src/pond2)

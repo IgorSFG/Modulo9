@@ -1,7 +1,16 @@
 # Iotsim
+Iotsim é um simulador de dispositivos IoT utilizando o protocolo MQTT através do uso da biblioteca Eclipse Paho e a linguagem de programação Go.
 
-## Iotsim em Ação!
-Para simular um sensor de radiação solar utilizando o protocolo MQTT, basta seguir o tutorial a seguir a partir do diretório `pond1`.
+## Simulando um Sensor de Radiação Solar
+
+## Simulando com Iotsim!
+Para simular um sensor de radiação solar, basta seguir o tutorial a partir do diretório `pond1`.
+
+### Configuração das variaveis de ambiente
+Primeiramente, para acessar o binário do Go, rode o seguinte comando:
+```
+source .bashrc
+```
 
 ### Configuração de um broker MQTT
 Primeiramente, é necessário configurar um broker MQTT. Isso pode ser feito inicializando o arquivo de configuração `mosquitto.conf` com o comando a seguir:
@@ -10,9 +19,14 @@ Primeiramente, é necessário configurar um broker MQTT. Isso pode ser feito ini
 mosquitto -c mosquitto.conf
 ```
 
-### 
+### Ativação do Publisher & Subscriber
 A segunda etapa consiste na ativação do publisher do sensor, e o subscriber para o recebimento de dados, que devem ser feitos rodando o seguinte comando nos diretórios `/publisher` e `/subscriber`.
 
 ```
 go run .
 ```
+
+## Iotsim em Ação!
+Você pode conferir o funcionamento de Iotsim no vídeo a seguir:
+
+https://drive.google.com/file/d/1X4G-q1IAJhRuZhomQylVpPES22cRnxkC/view?usp=sharing
