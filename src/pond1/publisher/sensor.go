@@ -10,7 +10,7 @@ func SolarRadiationSensor() string {
 	// Generate a random value between 0 and 1280
 	measurement := rand.Intn(1281)
 
-	firing_rate := 1.0 / 512.0 * 1e9
+	firing_rate := 1.0 / 22000.0 * 1e9
 
 	// Sleep for a short duration to simulate real-time measurements
 	time.Sleep(time.Duration(firing_rate))

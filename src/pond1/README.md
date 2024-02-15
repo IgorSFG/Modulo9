@@ -2,6 +2,9 @@
 Iotsim é um simulador de dispositivos IoT utilizando o protocolo MQTT através do uso da biblioteca Eclipse Paho e a linguagem de programação Go.
 
 ## Simulando um Sensor de Radiação Solar
+Para a simulação do dispositivo IoT, foi escolhido o
+[Sensor de Radiação Solar](https://sigmasensors.com.br/produtos/sensor-de-radiacao-solar-sem-fio-hobonet-rxw-lib-900),
+que tem sua faixa de medição variando de 0 a 1280 W/m² e com uma taxa de dados de até 250 kbps, o que possibilita uma transferência de até 22000 mensagens por segundo.
 
 ## Simulando com Iotsim!
 Para simular um sensor de radiação solar, basta seguir o tutorial a partir do diretório `pond1`.
