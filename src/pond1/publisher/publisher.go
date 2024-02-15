@@ -17,10 +17,10 @@ func main() {
 	}
 
 	for {
-		text := "Hello MQTT " + time.Now().Format(time.RFC3339)
-		token := client.Publish("test/topic", 0, false, text)
+		text := Sensor("solar-radiation")
+		token := client.Publish("sensor/topic", 0, false, text)
 		token.Wait()
-		fmt.Println("Publicado:", text)
+		fmt.Println("Published: ", text)
 		time.Sleep(2 * time.Second)
 	}
 }
