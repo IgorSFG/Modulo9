@@ -4,7 +4,7 @@ Iotsim é um simulador de dispositivos IoT utilizando o protocolo MQTT através 
 ## Simulando um Sensor de Radiação Solar
 Para a simulação do dispositivo IoT, foi escolhido o
 [Sensor de Radiação Solar](https://sigmasensors.com.br/produtos/sensor-de-radiacao-solar-sem-fio-hobonet-rxw-lib-900),
-que tem sua faixa de medição variando de 0 a 1280 W/m² e com uma taxa de dados de até 250 kbps, o que possibilita uma transferência de até 22000 mensagens por segundo.
+que tem sua faixa de medição variando de 0 a 1280 W/m² e com uma taxa de registro de pelo menos uma por minuto, mas pela proposta educacional, esse valor foi reduzido para este simulador.
 
 ## Simulando com Iotsim!
 Para simular um sensor de radiação solar, basta seguir o tutorial a partir do diretório `pond1`.
@@ -16,14 +16,14 @@ source .bashrc
 ```
 
 ### Configuração de um broker MQTT
-Primeiramente, é necessário configurar um broker MQTT. Isso pode ser feito inicializando o arquivo de configuração `mosquitto.conf` com o comando a seguir:
+Em seguida, é necessário configurar um broker MQTT. Isso pode ser feito inicializando o arquivo de configuração `mosquitto.conf` com o comando a seguir:
 
 ```
 mosquitto -c mosquitto.conf
 ```
 
 ### Ativação do Publisher & Subscriber
-A segunda etapa consiste na ativação do publisher do sensor, e o subscriber para o recebimento de dados, que devem ser feitos rodando o seguinte comando nos diretórios `/publisher` e `/subscriber`.
+Por último, falta apenas ativar o publisher do sensor, e o subscriber para o recebimento de dados, que devem ser feitos rodando o seguinte comando nos diretórios `/publisher` e `/subscriber`.
 
 ```
 go run .

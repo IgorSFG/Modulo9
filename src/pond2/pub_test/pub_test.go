@@ -5,18 +5,20 @@ import (
 	"math/rand"
 	"testing"
 	"time"
+	"fmt"
 
 	MQTT "github.com/eclipse/paho.mqtt.golang"
 )
 
-func testSensor(t *testing.T) uint16 {
+func testSensor(t *testing.T) string {
 	startTime := time.Now()
 	
 	measurement := rand.Intn(1281)
-	firing_rate := 1.0 / 512.0 * 1e9
+	firing_rate := 60.0 * 1e9
+	firing_rate = firing_rate/100.0
 	
 	time.Sleep(time.Duration(firing_rate))
-	t.Logf("Solar Radiation Measurement: %d W/m2", measurement)
+	text:= fmt.Sprintf("Solar Radiation Measurement: %d W/m2", measurement)
 	
 	elapsed_time := float64(time.Since(startTime))
 	expected_time := float64(firing_rate)
@@ -28,10 +30,10 @@ func testSensor(t *testing.T) uint16 {
 		t.Errorf("Solar Radiation Sensor took %f seconds to execute, expected %f seconds", elapsed_time, expected_time)
 	}
 
-	return uint16(measurement)
+	return string(text)
 }
 
-func testPublisher(t *testing.T, measurement uint16) {
+func testPublisher(t *testing.T, text string) {
 	opts := MQTT.NewClientOptions().AddBroker("tcp://localhost:1891")
 	opts.SetClientID("go_test_publisher")
 
@@ -40,14 +42,14 @@ func testPublisher(t *testing.T, measurement uint16) {
 		t.Error(token.Error())
 	}
 
-	token := client.Publish("test/topic", 0, false, measurement)
+	token := client.Publish("test/topic", 0, false, text)
 	token.Wait()
 	
-	t.Logf("Published: %d", measurement)
+	t.Log("Published: ", text)
 }
 
 func TestIotsim(t *testing.T) {
-	measurement := testSensor(t)
+	text := testSensor(t)
 
-	testPublisher(t, measurement)
+	testPublisher(t, text)
 }

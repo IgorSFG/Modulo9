@@ -1,18 +1,20 @@
 package main
 
 import (
+	"time"
 	"testing"
 
 	MQTT "github.com/eclipse/paho.mqtt.golang"
 )
 
-var messagePubHandler MQTT.MessageHandler = func(client MQTT.Client, msg MQTT.Message) {
-	var t *testing.T
-	t.Logf("Received: %s\n", msg.Payload())
-	t.Errorf("Received: %s\n", msg.Payload())
-}
-
 func TestSubscriber(t *testing.T) {
+	var messageReceived = make(chan struct{})
+	
+	var messagePubHandler MQTT.MessageHandler = func(client MQTT.Client, msg MQTT.Message) {
+		t.Logf("Received: %s\n", msg.Payload())
+		close(messageReceived)
+	}
+
 	opts := MQTT.NewClientOptions().AddBroker("tcp://localhost:1891")
 	opts.SetClientID("go_test_subscriber")
 	opts.SetDefaultPublishHandler(messagePubHandler)
@@ -28,4 +30,11 @@ func TestSubscriber(t *testing.T) {
 	}
 
 	t.Log("Subscriber running.")
+
+	select {
+	case <-messageReceived:
+		t.Log("Received a message. Test Sucessfull!")
+	case <-time.After(30 * time.Second):
+		t.Error("Timeout reached. No message received.")
+	}
 }
