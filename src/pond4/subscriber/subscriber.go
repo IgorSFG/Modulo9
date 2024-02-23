@@ -34,7 +34,7 @@ func main() {
 	opts.SetPassword(os.Getenv("HIVE_PSWD"))
 
 	var messagePubHandler mqtt.MessageHandler = func(client mqtt.Client, msg mqtt.Message) {
-		fmt.Printf("Recebido: %s\nTópico: %s\nQoS: %d\n", msg.Payload(), msg.Topic(), msg.Qos())
+		fmt.Printf("Recebido: %s\n", msg.Payload())
 	}
 	
 	var connectHandler mqtt.OnConnectHandler = func(client mqtt.Client) {
