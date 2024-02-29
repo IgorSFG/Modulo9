@@ -14,8 +14,8 @@ As atividades ponderadas podem ser encontradas a seguir.
 
 ### [POND2: Testando com IotsimTest!](https://github.com/IgorSFG/Modulo9/tree/main/src/pond2)
 
-### [POND3: ](https://github.com/IgorSFG/Modulo9/tree/main/src/pond3)
+### [POND3: Relatório](https://github.com/IgorSFG/Modulo9/tree/main/src/pond3)
 
 ### [POND4: Integrando com IotsimHive!](https://github.com/IgorSFG/Modulo9/tree/main/src/pond4)
 
-### [POND5: ](https://github.com/IgorSFG/Modulo9/tree/main/src/pond5)
+### [POND6: ](https://github.com/IgorSFG/Modulo9/tree/main/src/pond6)
