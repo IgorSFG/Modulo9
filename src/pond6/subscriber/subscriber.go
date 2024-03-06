@@ -32,10 +32,8 @@ func PostData(message string) {
 		fmt.Println("Error making the request:", err)
 	}
 
-	if req.StatusCode == 200 {
-		fmt.Println("Data sent successfully")
-	} else {
-		fmt.Printf("Error sending data: %s\n", req.Status)
+	if req.StatusCode != 201 {
+		fmt.Println("Error posting the data:", req.Status)
 	}
 	fmt.Println("")
 }

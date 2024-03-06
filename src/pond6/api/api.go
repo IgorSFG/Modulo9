@@ -38,8 +38,6 @@ func postsensor(c *gin.Context) {
     c.IndentedJSON(http.StatusCreated, PostSensor(data.Sensor, data.Value))
 }
 
-// getsensorByID locates the sensor whose id value matches the id
-// parameter sent by the client, then returns that sensor as a response.
 func getsensorByID(c *gin.Context) {
     id := c.Param("id")
 
