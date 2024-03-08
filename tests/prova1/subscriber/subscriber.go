@@ -6,7 +6,7 @@ import (
 )
 
 var messagePubHandler MQTT.MessageHandler = func(client MQTT.Client, msg MQTT.Message) {
-	fmt.Println(string(msg.Payload()))
+	fmt.Printf("\nMessage: %s\nTopic: %s\nQos: %d\n", msg.Payload(), msg.Topic(), msg.Qos())
 }
 
 func main() {
