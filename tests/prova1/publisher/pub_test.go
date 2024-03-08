@@ -28,7 +28,7 @@ func TestPublisher(t *testing.T) {
 	for index < 2{
 		sector := sectors[index%2]
 		text := Sector(sector)
-		token := client.Publish("sector/topic", qos, false, text)
+		token := client.Publish("test/topic", qos, false, text)
 		token.Wait()
 		fmt.Println(text)
 		time.Sleep(2 * time.Second)

@@ -3,7 +3,6 @@ package main
 import (
 	"time"
 	"testing"
-	"encoding/json"
 
 	MQTT "github.com/eclipse/paho.mqtt.golang"
 )
