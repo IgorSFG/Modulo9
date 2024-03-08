@@ -25,3 +25,8 @@ Para testar as funçoes do publisher e do subscriber, rode o seguinte comando no
 ```
 go test -v
 ```
+
+## Em Ação!
+Você pode conferir imagens do funcionamento a seguir:
+
+(https://github.com/IgorSFG/Modulo9/tree/main/tests/prova1/docs)
