@@ -55,6 +55,6 @@ func main() {
 		token := client.Publish("sensor/topic", 0, false, text)
 		token.Wait()
 		fmt.Println("Published: ", text)
-		time.Sleep(2 * time.Second)
+		time.Sleep(5 * time.Second)
 	}
 }

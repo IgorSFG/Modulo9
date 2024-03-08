@@ -30,10 +30,14 @@ func PostData(message string) {
 	req, err := http.Post(url, "application/json", bytes.NewBuffer([]byte(message)))
 	if err != nil {
 		fmt.Println("Error making the request:", err)
+		fmt.Println("")
+		return
 	}
 
 	if req.StatusCode != 201 {
 		fmt.Println("Error posting the data:", req.Status)
+		fmt.Println("")
+		return
 	}
 	fmt.Println("")
 }

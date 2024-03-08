@@ -10,11 +10,12 @@ import (
 
 var database = func () string {
 	currentDir, err := os.Getwd()
+	parentDir := filepath.Dir(currentDir)
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	dbPath := filepath.Join(currentDir, "database/data.db")
+	dbPath := filepath.Join(parentDir, "database/data.db")
 
 	return dbPath
 }
