@@ -48,4 +48,4 @@ database/data.db
 ## IotsimMeta em Ação!
 Você pode conferir o funcionamento de IotsimMeta no vídeo a seguir:
 
-https:
+https://drive.google.com/file/d/1j1XDhm1z2UYCpQuphqfuQU5veI6NnfUh/view?usp=sharing
