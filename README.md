@@ -20,6 +20,9 @@ As atividades ponderadas podem ser encontradas a seguir.
 
 ### [POND6: Visualizando e armazenando com IotsimMeta!](https://github.com/IgorSFG/Modulo9/tree/main/src/pond6)
 
+### [POND13: Consumindo e armazenando com IotsimMongoKafka!](https://github.com/IgorSFG/Modulo9/tree/main/src/pond13)
+
 ## Testes
 As provas podem ser encontradas a seguir.
 ### [PROVA1](https://github.com/IgorSFG/Modulo9/tree/main/tests/prova1)
+### [PROVA2](https://github.com/IgorSFG/Modulo9/tree/main/tests/prova2)
