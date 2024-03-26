@@ -4,7 +4,7 @@ IotsimMongoKafka é uma atualização de
 alterando o método de armazenamento para um banco de dados MongoDB e garantindo um índice sequencial com Kafka.
 
 ## Consumindo e armazenando com IotsimMongoKafka!
-Para armazenar os dados do simulador de sensor de radiação solar e visualizá-los em uma dashboard basta seguir o tutorial a partir do diretório `pond7`.
+Para armazenar os dados do simulador de sensor de radiação solar e visualizá-los em uma dashboard basta seguir o tutorial a partir do diretório `pond13`.
 
 ### Configuração das variaveis de ambiente
 Primeiramente, para acessar o binário do Go, rode o seguinte comando:
@@ -48,4 +48,4 @@ database/data.db
 ## IotsimMongoKafka em Ação!
 Você pode conferir o funcionamento de IotsimMongoKafka no vídeo a seguir:
 
-https://drive.google.com/file/d/1j1XDhm1z2UYCpQuphqfuQU5veI6NnfUh/view?usp=sharing
+https://

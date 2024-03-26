@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"testing"
 
 	config "iotsimkafka/config"
 
@@ -53,4 +54,9 @@ func InsertSensors(client *mongo.Client, data string) {
 		panic(err)
 	}
 	fmt.Printf("Inserted a single document: %v\n", result.InsertedID)
+}
+
+func TestMongo(t *testing.T) {
+	client := ConnectMongoDB()
+	InsertSensors(client, `{"sensor": "temperature", "value": "25"}`)
 }

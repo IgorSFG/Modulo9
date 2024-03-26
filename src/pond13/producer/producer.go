@@ -3,29 +3,15 @@ package main
 import (
 	"os"
 	"fmt"
-	//"time"
-	"regexp"
+
+	config "iotsimkafka/config"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
-	godotenv "github.com/joho/godotenv"
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 )
 
-func loadEnv() {
-	projectDirName := "pond6"
-	re := regexp.MustCompile(`^(.*` + projectDirName + `)`)
-	cwd, _ := os.Getwd()
-	rootPath := re.Find([]byte(cwd))
-
-	err := godotenv.Load(string(rootPath) + `/.env`)
-
-	if err != nil {
-		fmt.Printf("Error loading .env file: %s", err)
-	}
-}
-
 func main() {
-	loadEnv()
+	config.LoadEnv()
 
 	broker := os.Getenv("BROKER_ADDR")
 	port := 8883
