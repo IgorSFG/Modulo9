@@ -36,11 +36,15 @@ type Sensor struct {
 	Value  string `json:"value"`
 }
 
-func InsertSensors(client *mongo.Client, data string) {
+func InsertSensors(data string) {
+	client := ConnectMongoDB()
+
+	defer client.Disconnect(context.TODO())
+
 	var sensor Sensor
 
 	// Access a MongoDB collection through a database
-	err := bson.Unmarshal([]byte(data), &sensor)
+	err := bson.UnmarshalExtJSON([]byte(data), true, &sensor)
 	if err != nil {
 		panic(err)
 	}
@@ -48,7 +52,7 @@ func InsertSensors(client *mongo.Client, data string) {
 	collection := client.Database("Sensors").Collection(sensor.Sensor)
 
 	// Insert a single document
-	result, err := collection.InsertOne(context.TODO(), data)
+	result, err := collection.InsertOne(context.TODO(), sensor)
 	if err != nil {
 		panic(err)
 	}
