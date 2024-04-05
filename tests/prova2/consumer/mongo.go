@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	config "iotsimkafka/config"
+	config "prova2/config"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -32,8 +32,10 @@ func ConnectMongoDB() *mongo.Client {
 }
 
 type Sensor struct {
-	Sensor string `json:"sensor"`
-	Value  string `json:"value"`
+	IdSensor string 	`json:"idSensor"`
+	Timestamp  string 	`json:"timestamp"`
+	TipoPoluente string `json:"tipoPoluente"`
+	Nivel float32 		`json:"nivel"`
 }
 
 func InsertSensors(data string) {
@@ -49,7 +51,7 @@ func InsertSensors(data string) {
 		panic(err)
 	}
 
-	collection := client.Database("Sensors").Collection(sensor.Sensor)
+	collection := client.Database("Sensors").Collection(sensor.IdSensor)
 
 	// Insert a single document
 	result, err := collection.InsertOne(context.TODO(), sensor)
