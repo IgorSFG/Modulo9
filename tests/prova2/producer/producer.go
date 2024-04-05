@@ -41,6 +41,10 @@ func main() {
 		}, nil)
 
 		// Aguardar a entrega de todas as mensagens
-		producer.Flush(15 * 1000)
+		producer.Flush(5 * 1000)
+		
+		// Exibir mensagem enviada
+		fmt.Println("")
+		fmt.Printf("Message sent: %s\n", message)
 	}
 }

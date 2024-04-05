@@ -38,6 +38,7 @@ func main() {
 		msg, err := consumer.ReadMessage(-1)
 		if msg != nil && err == nil {
 			msgValue := string(msg.Value)
+			fmt.Println("")
 			fmt.Printf("Received message: %s\n", msgValue)
 			InsertSensors(msgValue)
 		} else if err != nil {

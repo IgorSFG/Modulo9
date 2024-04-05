@@ -12,7 +12,7 @@ Primeiramente, para acessar o binário do Go, rode o seguinte comando:
 source .bashrc
 ```
 
-Em seguida, crie um arquivo `.env` na pasta `config` com as suas credenciais:
+Em seguida, crie um arquivo `.env` na pasta `/config` com as suas credenciais:
 ```
 BROKER_ADDR = "379d67d20bd940f2921461046040735b.s1.eu.hivemq.cloud"
 HIVE_USER = "<seu-nome-de-usuario-aqui>"

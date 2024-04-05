@@ -33,9 +33,10 @@ func ConnectMongoDB() *mongo.Client {
 
 type Sensor struct {
 	IdSensor string 	`json:"idSensor"`
+	Tipo string 		`json:"tipo"`
 	Timestamp  string 	`json:"timestamp"`
 	TipoPoluente string `json:"tipoPoluente"`
-	Nivel float32 		`json:"nivel"`
+	Nivel string 		`json:"nivel"`
 }
 
 func InsertSensors(data string) {
@@ -51,7 +52,7 @@ func InsertSensors(data string) {
 		panic(err)
 	}
 
-	collection := client.Database("Sensors").Collection(sensor.IdSensor)
+	collection := client.Database("Sensors").Collection(sensor.Tipo)
 
 	// Insert a single document
 	result, err := collection.InsertOne(context.TODO(), sensor)
