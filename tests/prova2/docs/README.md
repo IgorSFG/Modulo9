@@ -24,7 +24,13 @@ Para o envio e recebimento de dados, rode o seguinte comando nos diretórios `/p
 go run .
 ```
 
-## IotsimMongoKafka em Ação!
+### Testando
+Para testar o projeto, rode o seguinte comando no diretório `/tests`:
+```
+go test -v
+```
+
+### Em Ação!
 Você pode conferir as imagens do funcionamento a seguir:
 
 ![producer](./imgs/producer.png)
@@ -32,3 +38,7 @@ Você pode conferir as imagens do funcionamento a seguir:
 ![consumer](./imgs/consumer.png)
 
 ![mongodb](./imgs/mongodb.png)
+
+![test1](./imgs/test1.png)
+
+![test2](./imgs/test2.png)
