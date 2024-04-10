@@ -1,6 +1,6 @@
 # Projeto de Análise de Dados em Grande Escala
 
-Este projeto consiste em dois programas em C, `create-sample.c` e `analyze.c`, que juntos formam um sistema capaz de processar e analisar grandes conjuntos de dados em paralelo. O objetivo principal é processar um arquivo de dados e gerar estatísticas agregadas para cada grupo identificado no conjunto de dados.
+Este projeto consiste em dois programas em C, `create-sample.c` e `analyze.c`, obtidos de um repositório público de [dannyvankooten](https://github.com/dannyvankooten/1brc#submitting), que juntos formam um sistema capaz de processar e analisar grandes conjuntos de dados em paralelo. O objetivo principal é processar um arquivo de dados e gerar estatísticas agregadas para cada grupo identificado no conjunto de dados.
 
 ## Componentes do Sistema
 
